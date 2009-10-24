@@ -56,7 +56,7 @@
 		</tr>
 	{% for obj in upcoming_list %}
 		<tr>
-			<td>{{ obj.date|date:"N d, Y" }}</td>
+			<td>{{ obj.date|date:"D. N d" }}</td>
 			<td>{{ obj.site.location }}</td>
 			<td>{{ obj.site.street }}</td>
 			<td>{{ obj.site.city }}</td>
@@ -79,7 +79,7 @@
 		</tr>
 	{% for obj in past_list %}
 		<tr>
-			<td>{{ obj.date|date:"N d, Y" }}</td>
+			<td>{{ obj.date|date:"D. N d" }}</td>
 			<td>{{ obj.site.location }}</td>
 			<td>{{ obj.site.street }}</td>
 			<td>{{ obj.site.city }}</td>
