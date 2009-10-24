@@ -1,5 +1,6 @@
 h1. django-swineflu
 
-I hope this will soon be a quick and dirty subdomain on my site where I republish a search engine friendly version of the H1N1 vaccine locations that LA Public Health currently buries in a PDF.
+A quick and dirty subdomain on my site where I republish a search engine friendly version of the 
+H1N1 vaccine locations that LA Public Health currently buries in a PDF.
 
-Right now, it's just the CSV file I parsed from the PDF.
+You can find it at "swineflu.palewire.com":http://swineflu.palewire.com.
