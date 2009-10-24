@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<th>Date</th>
+		<th>Location</th>
+		<th>Address</th>
+		<th>City</th>
+		<th>Hours</th>
+	</tr>
+{% for obj in object_list %}
+	<tr>
+		<td>{{ obj.date|date:"N d, Y" }}</td>
+		<td>{{ obj.site.location }}</td>
+		<td>{{ obj.site.street }}</td>
+		<td>{{ obj.site.city }}</td>
+		<td>{{ obj.hours_of_operation }}</td>
+	</tr>
+{% endfor %}
+</table>

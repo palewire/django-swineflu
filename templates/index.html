@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+<style>
+.swineflu-table {
+	width: 49em;
+}
+.swineflu-table td, th {
+	padding:4px;
+	font-size:0.9em;
+}
+.swineflu-table th {
+	font-weight:bold;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<h1>
+	<img style="vertical-align:text-bottom;" height="40" src="http://www.palewire.com/media/icons/apps-big.gif" alt="apps"/>&nbsp;
+	L.A. County H1N1 "Swine Flu" Vaccination Calendar
+</h1>
+
+<div id="detailbody" style="margin-right:5em !important; width:50em;">
+
+	<div style="width:40em;">
+	<p>
+		Below is a list of clinics in Los Angeles County offering <a href="http://www.cdc.gov/h1n1flu/qa.htm">H1N1</a> vaccinations between Oct. 23 and 
+		Nov. 8, 2009. The list is drawn from <a href="http://www.publichealth.lacounty.gov/acd/h1n1.htm">a document</a> published by the L.A. County Department of Public Health.
+	</p>
+	<p>
+		I've republished the list below in HTML because the government's document was limited to 
+		<a href="http://en.wikipedia.org/wiki/Portable_Document_Format">PDF</a> form. 
+		You can also download the data as an Excel spreadsheet by clicking <a href="{% url swineflu-download-xls %}">here</a>.
+	</p>
+	<p>
+		My opinion is that information of this importance should not be distributed exclusively via PDF, 
+		because PDFs don't do well in search engines and are more difficult to read on older computers and web browsers.
+	</p>
+	
+	<p>If you have any questions or suggestions, please forward them to <a href="http://www.palewire.com/who-is-ben-welsh/">me</a>.</p>
+	</div>
+
+	<h2>Upcoming vaccinations</h2>
+	
+	<br>
+	
+	<table border=1 class="swineflu-table">
+		<tr>
+			<th>Date</th>
+			<th>Location</th>
+			<th>Address</th>
+			<th>City</th>
+			<th>Hours</th>
+		</tr>
+	{% for obj in upcoming_list %}
+		<tr>
+			<td>{{ obj.date|date:"N d, Y" }}</td>
+			<td>{{ obj.site.location }}</td>
+			<td>{{ obj.site.street }}</td>
+			<td>{{ obj.site.city }}</td>
+			<td>{{ obj.hours_of_operation }}</td>
+		</tr>
+	{% endfor %}
+	</table>
+	
+	<h2>Past vaccinations</h2>
+	
+	<br>
+	
+	<table border=1 class="swineflu-table">
+		<tr>
+			<th>Date</th>
+			<th>Location</th>
+			<th>Address</th>
+			<th>City</th>
+			<th>Hours</th>
+		</tr>
+	{% for obj in past_list %}
+		<tr>
+			<td>{{ obj.date|date:"N d, Y" }}</td>
+			<td>{{ obj.site.location }}</td>
+			<td>{{ obj.site.street }}</td>
+			<td>{{ obj.site.city }}</td>
+			<td>{{ obj.hours_of_operation }}</td>
+		</tr>
+	{% endfor %}
+	</table>
+
+</div>
+{% endblock %}
