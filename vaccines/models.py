@@ -1,4 +1,4 @@
-from django.contrib.gis.db import models
+from django.db import models
 
 
 class Site(models.Model):
@@ -48,8 +48,8 @@ class Event(models.Model):
 	hours_of_operation = models.TextField(blank=True)
 	
 	class Meta:
-		ordering = ('ordering',)
-		latest_by = 'date'
+		ordering = ('date',)
+		get_latest_by = 'date'
 	
 	def __unicode__(self):
 		return u'%s on %s' % (self.site, self.date)
