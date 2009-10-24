@@ -1,4 +1,4 @@
-h1. h1n1vaccine.palewire.com
+h1. django-swineflu
 
 I hope this will soon be a quick and dirty subdomain on my site where I republish a search engine friendly version of the H1N1 vaccine locations that LA Public Health currently buries in a PDF.
 
