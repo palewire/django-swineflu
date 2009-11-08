@@ -46,6 +46,7 @@
 	<p>If you have any questions or suggestions, please forward them to <a href="http://www.palewire.com/who-is-ben-welsh/">me</a>.</p>
 	</div>
 
+	{% if upcoming_list %}
 	<h2>Upcoming vaccinations</h2>
 	
 	<br>
@@ -68,6 +69,7 @@
 		</tr>
 	{% endfor %}
 	</table>
+	{% endif %}
 	
 	<h2>Past vaccinations</h2>
 	
